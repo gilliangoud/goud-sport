@@ -2,7 +2,7 @@
 This project is a open-source management application for short-track speedskating competitions.
 
 ## ToDo:
-[ ] a working proof of concept.
+[ ] a working proof of concept.\n
 [ ] an actual readme.
 [ ] a contribution guide.
 [ ] a seperate todo markdown.
