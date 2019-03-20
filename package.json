@@ -38,6 +38,7 @@
     "@angular/router": "^7.0.0",
     "@nestjs/common": "5.5.0",
     "@nestjs/core": "5.5.0",
+    "@nestjs/microservices": "^6.0.1",
     "@nestjs/typeorm": "^6.0.0",
     "@nestjsx/crud": "^2.1.1",
     "class-transformer": "^0.2.0",
