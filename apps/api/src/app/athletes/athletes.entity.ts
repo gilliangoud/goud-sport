@@ -1,4 +1,4 @@
-import { Entity, Column } from 'typeorm';
+import { Entity, Column, ManyToOne, ManyToMany } from 'typeorm';
 import {
   IsOptional,
   IsDate,
@@ -8,6 +8,8 @@ import {
 } from 'class-validator';
 import { CREATE_UPDATE, CREATE, UPDATE } from '@nestjsx/crud';
 import { BaseEntity } from '../base-entity';
+import { User } from '../users/users.entity';
+import { Competition } from '../competitions/competitions.entity';
 
 export enum Gender {
   Male,
@@ -40,4 +42,10 @@ export class Athlete extends BaseEntity{
   @IsNotEmpty({ ...CREATE })
   @Column({ type: "enum", enum: Gender })
   gender: Gender;
+
+  @ManyToOne((type) => User, (u) => u.athletes)
+  user: User;
+
+  @ManyToMany((type) => Competition, (c) => c.competitors)
+  competitors: Competition[];
 }
