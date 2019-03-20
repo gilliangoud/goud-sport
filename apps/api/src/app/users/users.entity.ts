@@ -1,4 +1,4 @@
-import { Entity, Column, JoinColumn, OneToOne, ManyToOne, ManyToMany, OneToMany, Unique } from 'typeorm';
+import { Entity, Column, JoinColumn, OneToOne, ManyToOne, ManyToMany, OneToMany, Unique, BeforeInsert } from 'typeorm';
 import {
   IsOptional,
   IsString,
@@ -41,6 +41,7 @@ export class User extends BaseEntity {
   @OneToMany((type) => Athlete, (t) => t.user)
   athletes: Athlete[];
 
+  @BeforeInsert()
   hashPassword() {
     this.password = bcrypt.hashSync(this.password, 8);
   }

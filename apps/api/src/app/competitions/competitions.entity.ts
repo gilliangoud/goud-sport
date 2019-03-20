@@ -1,4 +1,4 @@
-import { Entity, Column, ManyToMany } from 'typeorm';
+import { Entity, Column, ManyToMany, JoinTable } from 'typeorm';
 import {
   IsOptional,
   IsDate,
@@ -26,5 +26,6 @@ export class Competition extends BaseEntity{
   date: Date;
 
   @ManyToMany((type) => Athlete, (c) => c.competitionsin)
+  @JoinTable()
   competitors: Athlete[];
 }

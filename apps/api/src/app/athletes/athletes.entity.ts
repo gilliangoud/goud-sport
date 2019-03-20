@@ -1,4 +1,4 @@
-import { Entity, Column, ManyToOne, ManyToMany } from 'typeorm';
+import { Entity, Column, ManyToOne, ManyToMany, JoinTable } from 'typeorm';
 import {
   IsOptional,
   IsDate,
@@ -45,7 +45,4 @@ export class Athlete extends BaseEntity{
 
   @ManyToOne((type) => User, (u) => u.athletes)
   user: User;
-
-  @ManyToMany((type) => Competition, (c) => c.competitors)
-  competitionsin: Competition[];
 }
