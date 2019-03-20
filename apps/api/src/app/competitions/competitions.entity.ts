@@ -25,6 +25,6 @@ export class Competition extends BaseEntity{
   @Column()
   date: Date;
 
-  @ManyToMany((type) => Athlete, (c) => c.users)
+  @ManyToMany((type) => Athlete, (c) => c.competitionsin)
   competitors: Athlete[];
 }

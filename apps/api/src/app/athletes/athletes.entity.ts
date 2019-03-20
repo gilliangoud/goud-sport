@@ -47,5 +47,5 @@ export class Athlete extends BaseEntity{
   user: User;
 
   @ManyToMany((type) => Competition, (c) => c.competitors)
-  competitors: Competition[];
+  competitionsin: Competition[];
 }
