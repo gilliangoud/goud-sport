@@ -10,7 +10,7 @@ This project is a open-source management application for short-track speedskatin
 - Angular
 
 ### Todo:
-- [ ] Auth users
+- [x] Auth users
 - [x] Login
 - [x] Registering
 - [ ] Users can register themselfs as a athlete
