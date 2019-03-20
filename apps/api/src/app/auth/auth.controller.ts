@@ -13,10 +13,9 @@ export class AuthController {
 
   @Post('login')
   async login(@Body() userDTO: LoginDTO) {
-    const user = await this.userService.getMany(userDTO);
-    const payload = {
-      username: user.username,
-      seller: user.seller,
+    const user = await this.userService.getByLogin(userDTO);
+    const payload: Payload = {
+      email: user.email,
     };
     const token = await this.authService.signPayload(payload);
     return { user, token };
@@ -26,7 +25,7 @@ export class AuthController {
   async register(@Body() userDTO: RegisterDTO) {
     const user = await this.userService.createOne(userDTO);
     const payload: Payload = {
-      username: user.email,
+      email: user.email,
     };
     const token = await this.authService.signPayload(payload);
     return { user, token };
