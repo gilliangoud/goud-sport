@@ -11,8 +11,8 @@ This project is a open-source management application for short-track speedskatin
 
 ### Todo:
 - [ ] Auth users
-- [ ] Login
-- [ ] Registering
+- [x] Login
+- [x] Registering
 - [ ] Users can register themselfs as a athlete
 - [ ] Users can register themselfs to a existing athlete
 - [ ] Users can register a club
