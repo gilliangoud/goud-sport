@@ -12,6 +12,6 @@ export class AuthService {
   }
 
   async validateUser(payload: Payload) {
-    return await this.userService.getMany(payload);
+    return await this.userService.getByPayload(payload);
   }
 }
